@@ -72,6 +72,36 @@ class Test_Win (QWidget):
     self.text_timer.setStyleSheet("color:(0,0,0)")
     if time.toString("hh:mm:ss") == "00:00:00":
       self.timer.stop()
+  #другий таймер
+  def timer_sits(self):
+    global time 
+    time = QTime(0, 0, 30)
+    self.timer = QTimer()
+    self.timer.timeout.connect(self.timer2Event)
+    self.timer.start(1500)
+  
+  def timer2Event(self):
+    global time
+    time = time.addSecs(-1)
+    self.text_timer.setText(time.toString("hh:mm:ss")[6:8])
+    self.text_timer.setFont(QFont("Times", 36, QFont.Bold))
+    self.text_timer.setStyleSheet("color:(0,0,0)")
+    if time.toString("hh:mm:ss") == "00:00:00":
+      self.timer.stop()
+  
+  def timer3Event(self):
+    global time
+    time = time.addSecs(-1)
+    self.text_timer.setText(time.toString("hh:mm:ss"))
+    if int(time.toString("hh:mm:ss")[6:8]) >= 45:
+      self.text_timer.setStyleSheet("color:(0,255,0)")
+    if int(time.toString("hh:mm:ss")[6:8]) <= 15:
+      self.text_timer.setStyleSheet("color:(0,255,0)")
+    else:
+      self.text_timer.setStyleSheet("color:(0,0,0)")
+    self.text_timer.setFont(QFont("Times", 36, QFont.Bold))
+    if time.toString("hh:mm:ss") == "00:00:00":
+      self.timer.stop()
 
   #встановлює, як виглядатиме вікно (напис, розмір, місце) '''
   def setAppear(self):
