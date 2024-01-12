@@ -5,6 +5,18 @@ from instructions import *
 from win_3 import *
 from PyQt5.QtGui import QFont
 
+class Person():
+  def __init__(self, name, age):
+    self.name = name
+    self.age = age
+
+class Experiment():
+  def __init__(self, person, test1, test2, test3):
+    self.person = person
+    self.test1 = test1
+    self.test2 = test2
+    self.test3 = test3
+
 class Test_Win (QWidget):
   def __init__(self):
     super().__init__()
