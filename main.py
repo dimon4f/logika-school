@@ -30,6 +30,7 @@ class Main_win (QWidget):
     self.hide()
     self.win_2 = Test_Win()
   
+  
 
 
 

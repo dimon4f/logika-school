@@ -110,6 +110,9 @@ class Test_Win (QWidget):
 
   def connects(self):
     self.btn_next.clicked.connect(self.next_click)
+    self.btn_test1.clicked.connect(self.timer_test1)
+    self.btn_test2.clicked.connect(self.timer_sits)
+    self.btn_test3.clicked.connect(self.timer_final)
     
   def next_click(self):
     self.hide()
