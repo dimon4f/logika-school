@@ -1,8 +1,9 @@
 
-from PyQt5.QtCore import Qt
+from PyQt5.QtCore import Qt, QTimer, QTime
 from PyQt5.QtWidgets import *
 from instructions import *
 from win_2 import *
+from PyQt5.QtGui import QFont
 
 class Main_win (QWidget):
   def __init__(self):
@@ -28,7 +29,7 @@ class Main_win (QWidget):
   def next_click(self):
     self.hide()
     self.win_2 = Test_Win()
-
+  
 
 
 

@@ -1,8 +1,9 @@
 # напиши тут код для другого екрана програми
-from PyQt5.QtCore import Qt
+from PyQt5.QtCore import Qt, QTimer, QTime
 from PyQt5.QtWidgets import *
 from instructions import *
 from win_3 import *
+from PyQt5.QtGui import QFont
 
 class Test_Win (QWidget):
   def __init__(self):
@@ -55,6 +56,22 @@ class Test_Win (QWidget):
     self.h_line.addLayout(self.l_line)
     self.h_line.addLayout(self.r_line)
     self.setLayout(self.h_line)
+  
+  def timer_test1(self):
+    global time 
+    time = QTime(0, 0, 15)
+    self.timer = QTimer()
+    self.timer.timeout.connect(self.timer1Event)
+    self.timer.start(1000)
+
+  def timer1Event(self):
+    global time
+    time = time.addSecs(-1)
+    self.text_timer.setText(time.toString("hh:mm:ss"))
+    self.text_timer.setFont(QFont("Times", 36, QFont.Bold))
+    self.text_timer.setStyleSheet("color:(0,0,0)")
+    if time.toString("hh:mm:ss") == "00:00:00":
+      self.timer.stop()
 
   #встановлює, як виглядатиме вікно (напис, розмір, місце) '''
   def setAppear(self):
