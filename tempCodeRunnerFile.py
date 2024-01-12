@@ -1,1 +1,2 @@
-from PyQt5.QtCore import Qt, QTimer, QTime
+def connects(self):
+    self.button_next.clicked.connect(self.next_click)
