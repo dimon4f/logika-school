@@ -113,6 +113,13 @@ class Test_Win (QWidget):
     self.btn_test1.clicked.connect(self.timer_test1)
     self.btn_test2.clicked.connect(self.timer_sits)
     self.btn_test3.clicked.connect(self.timer_final)
+  
+  def timer_final(self):
+    global time 
+    time = QTime(0, 1, 0)
+    self.timer = QTimer()
+    self.timer.timeout.connect(self.timer3Event)
+    self.timer.start(1000)
     
   def next_click(self):
     self.hide()
