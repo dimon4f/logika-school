@@ -27,7 +27,7 @@ class Main_win (QWidget):
     self.button_next.clicked.connect(self.next_click)
   def next_click(self):
     self.hide()
-    #self.win_2 = Test_Win()
+    self.win_2 = Test_Win()
 
 
 
