@@ -1,4 +1,4 @@
-# напиши тут код для другого екрана програми
+
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import *
 from instructions import *
@@ -12,7 +12,7 @@ class Test_Win (QWidget):
     self.setAppear()
     self.show()
 
-  #створює графічні елементи
+
   def initUi(self):
     self.btn_next = QPushButton(txt_sendresults, self)
     self.btn_test1 = QPushButton(txt_starttest1, self)
@@ -56,7 +56,7 @@ class Test_Win (QWidget):
     self.h_line.addLayout(self.r_line)
     self.setLayout(self.h_line)
 
-  #встановлює, як виглядатиме вікно (напис, розмір, місце) '''
+
   def setAppear(self):
     self.setWindowTitle(txt_title)
     self.resize(win_width, win_height)
@@ -66,4 +66,3 @@ class Test_Win (QWidget):
     
   def next_click(self):
     self.hide()
-    #self.win_2 = win_3()
